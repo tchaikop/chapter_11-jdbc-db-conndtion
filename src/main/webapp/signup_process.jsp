@@ -24,29 +24,24 @@
 	// System.out.println(sql);
 	String sql = "insert into members(id, password, email) values(?,?,?)";
 	
-	// 드라이버 이름->정해진 것
+
 		String driverName = "com.mysql.jdbc.Driver";
-		
-		// mysql이 설치 되어 있는 db의 주소
 		String url = "jdbc:mysql://localhost:3306/shopdb2";
-		
-		//mysql사용자 계정
 		String username = "root";
 		String password = "12345";
 		
 		Connection conn=null;
-		// Statement stmt = null;
 		PreparedStatement pstmt = null;
 		
 		
 		try{
 			Class.forName(driverName);
 			conn = DriverManager.getConnection(url,username,password);
-			
+			pstmt = conn.prepareStatement(sql);
 		// stmt=	conn.createStatement();
 		// int result = stmt.executeUpdate(sql);
 		
-		pstmt = conn.prepareStatement(sql);
+		
 		pstmt.setString(1,uid);
 		pstmt.setString(2,upw);
 		pstmt.setString(3,umail);

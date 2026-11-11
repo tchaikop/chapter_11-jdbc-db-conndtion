@@ -36,13 +36,11 @@ String sql = "SELECT * FROM members where id =?";
 		try{
 			Class.forName(driverName);
 			conn = DriverManager.getConnection(url,username,password);
-			
-			
-			 pstmt = conn.prepareStatement(sql);
+		    pstmt = conn.prepareStatement(sql);
 			 
 			 pstmt.setString(1,uid);
 			 
-	     rs =  pstmt.executeQuery();
+	        rs =  pstmt.executeQuery();
 	    
 	    
 	     if(rs.next()){

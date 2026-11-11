@@ -19,27 +19,20 @@
 
 
 	String driverName = "com.mysql.jdbc.Driver";
-	
-	
 	String url = "jdbc:mysql://localhost:3306/shopdb2";
-	
-	
 	String username = "root";
 	String password = "12345";
 	
 	Connection conn=null;
-	
 	PreparedStatement pstmt = null;
 	
 	
 	try{
 		Class.forName(driverName);
 		conn = DriverManager.getConnection(url,username,password);
-		
+		pstmt = conn.prepareStatement(sql);
 	
-	pstmt = conn.prepareStatement(sql);
-	
-	pstmt.setString(1,uid);
+	    pstmt.setString(1,uid);
 	
 	int result = pstmt.executeUpdate();
 	

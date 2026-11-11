@@ -27,12 +27,11 @@
 	Connection conn = null;
 	
 	try{
-	// mysql에 jdbc 드라이버를 로딩
-	Class.forName(driverName);
 	
-	//데이터베이스 연결
+	Class.forName(driverName);  	// mysql에 jdbc 드라이버를 로딩
+	conn = DriverManager.getConnection(url,username,password); //데이터베이스 연결
 	
-	conn = DriverManager.getConnection(url,username,password);
+	
 	System.out.println("연결성공");
 	System.out.println(conn);
 	
@@ -48,7 +47,9 @@
 
 
 
-%>
+%> 
+
+
 
 </body>
 </html>
