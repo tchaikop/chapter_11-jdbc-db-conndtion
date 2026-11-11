@@ -18,7 +18,7 @@
 	String driverName = "com.mysql.jdbc.Driver";
 	
 	// mysql이 설치 되어 있는 db의 주소
-	String url = "jdbc:mysql://localhost:3306/shopdb";
+	String url = "jdbc:mysql://localhost:3306/shopdb2";
 	
 	//mysql사용자 계정
 	String username = "root";
