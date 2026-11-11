@@ -11,7 +11,11 @@
 </head>
 <body>
 <%
-String sql = "delete from members where id =?";
+
+
+     String uid = request.getParameter("deleteID");
+
+     String sql = "delete from members where id =?";
 
 
 	String driverName = "com.mysql.jdbc.Driver";
@@ -27,7 +31,7 @@ String sql = "delete from members where id =?";
 	
 	PreparedStatement pstmt = null;
 	
-	String uid = request.getParameter("deleteID");
+	
 	try{
 		Class.forName(driverName);
 		conn = DriverManager.getConnection(url,username,password);
